@@ -55,7 +55,9 @@ function PDFViewer({ role, pdfFile }) {
         <div>
             <h2>PDF Viewer ({role})</h2>
             
-            <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
+            {/* <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}> */}
+            <Worker workerUrl={`https://unpkg.com/pdfjs-dist@4.4.168/build/pdf.worker.min.js`}>
+
                  <Viewer
                     fileUrl={pdfFile}
                     // key={pageNumber}
