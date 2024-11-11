@@ -1,2 +1,0 @@
-# pdfsync
-kallvium 
