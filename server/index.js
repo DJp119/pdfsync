@@ -8,6 +8,7 @@ const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
 
 let currentPage = 1;
+<<<<<<< HEAD
 function debounce(func, delay) {
     let timer;
     return function(...args) {
@@ -41,3 +42,24 @@ io.on("connection", (socket) => {
 });
 
 server.listen(3001, () => console.log("Server running on port 3001"));
+=======
+
+io.on("connection", (socket) => {
+    console.log("User connected", socket.id);
+
+    // Send current page to newly connected client
+    socket.emit("pageUpdate", currentPage);
+
+    // Listen for page change requests from admin
+    socket.on("changePage", (page) => {
+        currentPage = page;
+        io.emit("pageUpdate", currentPage);
+    });
+
+    socket.on("disconnect", () => {
+        console.log("User disconnected", socket.id);
+    });
+});
+
+server.listen(3001, () => console.log("Server running on port 3001"));
+>>>>>>> d52a485 (Initial project setup with React and Node)
