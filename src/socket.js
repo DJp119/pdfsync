@@ -1,4 +1,4 @@
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:3001"); // Connect to the backend server
+const socket = io("https://pdfsync.onrender.com/"); // Connect to the backend server
 export default socket;

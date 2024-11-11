@@ -6,7 +6,9 @@ const cors = require("cors");
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
-
+app.use(cors({
+    origin: "https://pdfsync.onrender.com/",
+  }));
 let currentPage = 1;
 <<<<<<< HEAD
 function debounce(func, delay) {
